@@ -7,7 +7,7 @@ import { siteUrl } from "../lib/site-url";
 export const metadata: Metadata = { title: "演奏基本功" };
 
 const grips = [
-  { id: "german", name: "德式握法", en: "German Grip", cue: "掌心向下，兩支鼓棒形成約 90°", description: "手背朝上、掌心朝向鼓面，兩支鼓棒向內延伸但尖端不碰觸。常以手腕帶動，適合先感受穩定而扎實的擊打。" },
+  { id: "german", name: "德式握法", en: "German Grip", cue: "掌心向下，兩支鼓棒形成約 90°", description: "手背朝上、掌心向下，兩支鼓棒的尖端不會碰到，以手腕帶動鼓棒來打擊。" },
   { id: "french", name: "法式握法", en: "French Grip", cue: "掌心左右相對，兩支鼓棒平行", description: "雙手拇指較朝上，掌心彼此相對；鼓棒保持平行且尖端不碰觸，手指較容易參與細緻控制。" },
   { id: "american", name: "美式握法", en: "American Grip", cue: "掌心向下，鼓棒尖端夾角約 45°", description: "掌心朝下但角度比德式自然收窄，兩支鼓棒向內延伸並保留距離。手腕與手指都能自然參與。" },
 ] as const;
@@ -15,7 +15,7 @@ const grips = [
 function GripDiagram({ variant, label }: { variant: string; label: string }) {
   return (
     <div className={`grip-diagram grip-${variant}`}>
-      <img src={siteUrl(`/images/grips/${variant}.webp`)} alt={`${label}：依參考照片重繪的斜上方視角，雙手握住鼓棒，棒尖彼此分開`} width="1536" height="1024" />
+      <img src={siteUrl(`/images/grips/${variant === "american" ? "american-with-stand" : variant}.webp`)} alt={`${label}：依參考照片重繪的斜上方視角，雙手握住鼓棒，棒尖彼此分開`} width="1200" height="800" />
     </div>
   );
 }
@@ -42,7 +42,7 @@ export default function Basics() {
             </article>
           ))}
         </div>
-        <aside className="grip-reminder"><strong>三種示意都不讓鼓棒尖端碰觸</strong><p>插圖依提供照片重繪；斜上方視角有透視，90°／45°指鼓面平面上的鼓棒方向，不是直接量圖上的角度。實際演奏請保持放鬆，並由老師協助調整。</p></aside>
+        <aside className="grip-reminder"><strong>握法提醒</strong><p>鼓棒握法只是協助一開始學習握棒的方式，習慣之後自己可以根據舒服的角度握鼓棒</p></aside>
         <section className="grip-sources" aria-labelledby="grip-sources-title">
           <h2 id="grip-sources-title">參考資料</h2>
           <a href="https://jeremydrums.pixnet.net/blog/posts/5053459908" target="_blank" rel="noreferrer">Jeremy Drums：鼓棒握法文章 ↗</a>

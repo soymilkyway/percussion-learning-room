@@ -60,4 +60,9 @@ test("Export includes real CSS/font files and bypasses Jekyll", () => {
   }
   scan(out);
   assert.ok(count > 0);
+  for (const font of ["NotoSansTC-site.woff2", "NotoSerifTC-site.woff2"]) {
+    assert.ok(existsSync(path.join(out, "fonts", font)), `Missing local font ${font}`);
+    const html = readFileSync(path.join(out, "index.html"), "utf8");
+    assert.ok(html.includes(`${base}/fonts/${font}`), `Font URL is missing the project base path: ${font}`);
+  }
 });

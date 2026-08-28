@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import { Noto_Sans_TC, Noto_Serif_TC } from "next/font/google";
 import "./globals.css";
 import { siteUrl } from "./lib/site-url";
 
-const sans = Noto_Sans_TC({ variable: "--font-sans", subsets: ["latin"], weight: ["400", "500", "700"] });
-const serif = Noto_Serif_TC({ variable: "--font-serif", subsets: ["latin"], weight: ["700", "900"] });
+const fontCss = `
+@font-face{font-family:"Percussion Noto Sans TC";src:url("${siteUrl("/fonts/NotoSansTC-site.woff2")}") format("woff2");font-style:normal;font-weight:100 900;font-display:swap}
+@font-face{font-family:"Percussion Noto Serif TC";src:url("${siteUrl("/fonts/NotoSerifTC-site.woff2")}") format("woff2");font-style:normal;font-weight:100 900;font-display:swap}
+`;
 
 export async function generateMetadata(): Promise<Metadata> {
   let origin = process.env.NEXT_PUBLIC_SITE_ORIGIN;
@@ -25,5 +26,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="zh-Hant"><body className={`${sans.variable} ${serif.variable}`}>{children}</body></html>;
+  return <html lang="zh-Hant"><head><style dangerouslySetInnerHTML={{ __html: fontCss }} /></head><body>{children}</body></html>;
 }

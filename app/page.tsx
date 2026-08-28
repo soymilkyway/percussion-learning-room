@@ -11,7 +11,7 @@ const percussionGlossary = [
     ["邦哥鼓", "Bongo", ""],
     ["康加鼓", "Conga", ""],
     ["定音鼓", "Timpani", "Timp."],
-    ["爵士鼓", "Drumset / Drums", ""],
+    ["爵士鼓/鼓組", "Drumset / Drums", ""],
   ] },
   { id: "cymbals", title: "鈸與鑼類", rows: [
     ["手鈸／雙鈸", "Crash Cymbals", "Cr. Cyms."],
@@ -19,7 +19,7 @@ const percussionGlossary = [
     ["鑼", "Tam-tam / Gong", ""],
   ] },
   { id: "mallets", title: "琴類", rows: [
-    ["（高音）木琴", "Xylophone", "Xylo."],
+    ["高音木琴", "Xylophone", "Xylo."],
     ["馬林巴木琴", "Marimba", ""],
     ["鐵琴／顫音琴", "Vibraphone", "Vib."],
     ["鐘琴", "Glockenspiel / Bells", "Glock."],
@@ -50,7 +50,7 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">PERCUSSION STARTER</p>
           <h1>給剛加入打擊的你</h1>
-          <p className="lead">有事沒事可以點進來了解看看<br />帶你一步步認識管樂打擊</p>
+          <p className="lead">有事沒事可以點進來了解看看<br />帶你一步步認識管樂打擊<br /><span className="hero-glossary-hint">⨳這個頁面下方有樂器中英文對照，方便你記得樂器名!</span></p>
           <div className="hero-actions">
             <a className="button primary" href={pageUrl("/basics")} target="_top">從基本功開始 <span aria-hidden="true">→</span></a>
             <a className="button quiet" href={pageUrl("/instruments")} target="_top">先認識樂器</a>
@@ -85,9 +85,10 @@ export default function Home() {
         </div>
         <div className="glossary-grid">
           {percussionGlossary.map((group) => (
-            <div className="glossary-group" key={group.id}>
+            <details className="glossary-group" key={group.id}>
+              <summary>{group.title}<span aria-hidden="true">＋</span></summary>
               <table className="percussion-terms-table">
-                <caption>{group.title}<span>{group.rows.length} 種樂器</span></caption>
+                <caption className="sr-only">{group.title}中英文與縮寫</caption>
                 <colgroup><col /><col className="glossary-abbreviation-column" /></colgroup>
                 <thead><tr><th scope="col">樂器名稱<span className="glossary-heading-hint">中／英文</span></th><th scope="col">縮寫</th></tr></thead>
                 <tbody>
@@ -99,7 +100,7 @@ export default function Home() {
                   ))}
                 </tbody>
               </table>
-            </div>
+            </details>
           ))}
         </div>
       </section>

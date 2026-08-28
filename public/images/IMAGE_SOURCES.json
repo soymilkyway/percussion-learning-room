@@ -144,18 +144,18 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "changes": "Background removed; cropped to one instrument where needed; scaled and padded. Original photographic detail retained."
   },
-  {
-    "id": "electric-bass",
-    "group": "band",
-    "file": "File:Fender Precision Bass.jpg",
-    "asset": "band/cutouts/electric-bass.webp",
-    "source": "https://commons.wikimedia.org/wiki/File:Fender_Precision_Bass.jpg",
-    "download": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Fender_Precision_Bass.jpg/500px-Fender_Precision_Bass.jpg",
-    "author": "Not specified in Commons metadata; see linked source page",
-    "license": "Public domain",
-    "licenseUrl": "",
-    "changes": "Background removed; cropped to one instrument where needed; scaled and padded. Original photographic detail retained."
-  },
+    {
+      "id": "electric-bass",
+      "group": "band",
+      "file": "File:Bass guitar (instrument).jpg",
+      "asset": "band/cutouts/electric-bass-v2.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Bass_guitar_(instrument).jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Bass_guitar_%28instrument%29.jpg",
+      "author": "Ziongarage",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "changes": "Background and shoulder strap removed; full instrument retained; scaled and padded. Original photographic detail retained."
+    },
   {
     "id": "vibraslap",
     "group": "instruments",
@@ -230,13 +230,25 @@
   {
     "id": "harp",
     "group": "band",
-    "file": "File:Harp MET 1971.152.2.jpeg",
-    "asset": "band/cutouts/harp.webp",
-    "source": "https://commons.wikimedia.org/wiki/File:Harp_MET_1971.152.2.jpeg",
-    "download": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Harp_MET_1971.152.2.jpeg/500px-Harp_MET_1971.152.2.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-    "author": "The Metropolitan Museum of Art (photograph); J. F. Brown & Co. (instrument)",
+    "file": "File:Pedal Harp MET DT698.jpg",
+    "asset": "band/cutouts/harp-color-cutout.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Pedal_Harp_MET_DT698.jpg",
+    "download": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Pedal_Harp_MET_DT698.jpg/960px-Pedal_Harp_MET_DT698.jpg",
+    "author": "The Metropolitan Museum of Art (photograph); Lyon & Healy (instrument)",
     "license": "CC0",
     "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "changes": "Photographic frame manually masked; neutral background between strings removed; cropped and padded. No instrument pixels generated."
+    "changes": "Background removed from the color photograph; resized and padded to the site card ratio."
+  },
+  {
+    "id": "brake-drum",
+    "group": "instruments",
+    "asset": "instruments/cutouts/brake-drum.webp",
+    "source": "https://omeka-s.grinnell.edu/s/MusicalInstruments/item/2691",
+    "download": "https://digital-grinnell.nyc3.digitaloceanspaces.com/omeka-s/digital-grinnell/original/c3f55e324d1ea21f29e24268f6aab805.jpg",
+    "author": "Grinnell College Musical Instrument Collection",
+    "license": "Local review only. Before public reproduction, email the collection with the image and publication title; confirm photographer and add the required credit line.",
+    "changes": "One standalone brake drum cropped from collection photograph; background removed.",
+    "licenseUrl": "https://omeka-s.grinnell.edu/s/MusicalInstruments/page/about",
+    "publicationPending": true
   }
 ]

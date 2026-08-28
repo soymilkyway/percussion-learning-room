@@ -20,6 +20,7 @@ const families = [
       { name: "雙簧管", en: "Oboe", image: "oboe" },
       { name: "薩克斯風", en: "Saxophone", detail: "圖片為 Alto；家族包含 Soprano／Alto／Tenor／Baritone", image: "saxophone" },
       { name: "低音管", en: "Bassoon", image: "bassoon" },
+      { name: "低音提琴", en: "Double Bass", detail: "樂團用來增厚低音或是有樂曲特別需要才會出現", image: "double-bass" },
     ],
   },
   {
@@ -33,7 +34,6 @@ const families = [
       { name: "法國號", en: "Horn", image: "horn" },
       { name: "上低音號", en: "Euphonium", image: "euphonium" },
       { name: "低音號", en: "Tuba", image: "tuba" },
-      { name: "低音提琴", en: "Double Bass", detail: "部分樂團用來增厚低音", image: "double-bass" },
     ],
   },
   {
@@ -97,6 +97,7 @@ export default function BandKnowledge() {
                 {family.instruments.map((instrument) => (
                   <li key={instrument.name}>
                     <img
+                      className={`band-instrument-image band-instrument-${instrument.image}`}
                       src={siteUrl("imageGroup" in instrument && instrument.imageGroup === "percussion" ? `/images/instruments/review/${instrument.image}.webp` : `/images/band/cutouts/${instrument.image}.webp`)}
                       alt={`${instrument.name} ${instrument.en}`}
                     />
@@ -112,9 +113,9 @@ export default function BandKnowledge() {
           <div><p className="english">DEPENDS ON THE MUSIC</p><h2 id="additional-instruments-title">依曲目需求加入的樂器</h2></div>
           <p>根據不同樂曲的編制與音色需求，管樂團還可能加入：</p>
           <ul>{additionalInstruments.map((instrument) => (
-            <li key={instrument.name}>
-              <img src={siteUrl(`/images/band/cutouts/${instrument.image}.webp`)} alt={`${instrument.name} ${instrument.en}`} />
-              <div><strong>{instrument.name}</strong><span>{instrument.en}</span></div>
+            <li className={`additional-instrument-card additional-instrument-card-${instrument.image}`} key={instrument.name}>
+              <div className="additional-instrument-visual"><img className={`additional-instrument-image additional-instrument-${instrument.image}`} src={siteUrl(`/images/band/cutouts/${instrument.image === "harp" ? "harp-color-cutout" : instrument.image === "electric-bass" ? "electric-bass-v2" : instrument.image}.webp`)} alt={`${instrument.name} ${instrument.en}`} /></div>
+              <div className="additional-instrument-copy"><strong>{instrument.name}</strong><span>{instrument.en}</span></div>
             </li>
           ))}</ul>
         </section>

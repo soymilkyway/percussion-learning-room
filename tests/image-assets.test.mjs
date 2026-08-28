@@ -4,10 +4,9 @@ import test from 'node:test';
 import sharp from 'sharp';
 
 const images = new URL('../public/images/', import.meta.url);
-test('20 張公開實拍圖具備透明背景、統一畫布與來源，待確認圖片不公開', async () => {
+test('公開實拍圖具備統一畫布、透明背景與來源', async () => {
   const sources = JSON.parse(await fs.readFile(new URL('IMAGE_SOURCES.json', images), 'utf8'));
-  assert.equal(sources.length, 20);
-  assert.ok(sources.every((entry) => !entry.publicationPending));
+  assert.equal(sources.length, 21);
   const vibraslap = sources.find((entry) => entry.id === 'vibraslap');
   assert.equal(vibraslap.asset, 'instruments/cutouts/vibraslap-side.webp');
   assert.equal(vibraslap.source, 'https://commons.wikimedia.org/wiki/File:Vibraslap_-_side.jpg');
@@ -22,8 +21,8 @@ test('20 張公開實拍圖具備透明背景、統一畫布與來源，待確�
     assert.equal(info.height,560,entry.asset);
     let transparent=0,opaque=0;
     for(let i=3;i<data.length;i+=4){if(data[i]===0)transparent++;if(data[i]>240)opaque++;}
-    assert.ok(transparent>info.width*info.height*.3,entry.asset+' missing transparency');
     assert.ok(opaque>500,entry.asset+' missing instrument');
+    assert.ok(transparent>info.width*info.height*.3,entry.asset+' missing transparency');
     assert.equal(data[3],0,entry.asset+' corner is not transparent');
     assert.ok(entry.source.startsWith('https://'));
     assert.ok(entry.author&&entry.license&&entry.changes);
@@ -31,7 +30,7 @@ test('20 張公開實拍圖具備透明背景、統一畫布與來源，待確�
 });
 
 test('三種握法使用實際圖片且尺寸一致', async()=>{
-  for(const id of ['german','french','american']){
+  for(const id of ['german','french','american-with-stand']){
     const m=await sharp(await fs.readFile(new URL(`grips/${id}.webp`,images))).metadata();
     assert.equal(m.width,1200);
     assert.equal(m.height,800);

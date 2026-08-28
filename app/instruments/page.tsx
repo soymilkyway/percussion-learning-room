@@ -27,7 +27,7 @@ export default function Instruments() {
             <div className="instrument-grid">
               {group.items.map((item) => (
                 <article className="instrument-card" key={item.name}>
-                  {item.image && <img className="instrument-card-image" src={siteUrl(`/images/instruments/${cutoutImages.has(item.image) ? "cutouts" : "review"}/${item.image === "vibraslap" ? "vibraslap-side" : item.image}.webp`)} alt="" aria-hidden="true" />}
+                  {item.image && <img className={`instrument-card-image instrument-image-${item.image}`} src={siteUrl(`/images/instruments/${cutoutImages.has(item.image) ? "cutouts" : "review"}/${item.image === "vibraslap" ? "vibraslap-side" : item.image}.webp`)} alt="" aria-hidden="true" />}
                   <div className="instrument-icon" aria-hidden="true">{group.icon}</div>
                   <div className="instrument-card-name"><h3>{item.name}</h3><p className="english">{item.en}</p></div>
                   <dl>
