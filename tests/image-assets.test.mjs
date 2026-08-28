@@ -6,7 +6,7 @@ import sharp from 'sharp';
 const images = new URL('../public/images/', import.meta.url);
 test('公開實拍圖具備統一畫布、透明背景與來源', async () => {
   const sources = JSON.parse(await fs.readFile(new URL('IMAGE_SOURCES.json', images), 'utf8'));
-  assert.equal(sources.length, 21);
+  assert.equal(sources.length, 20);
   const vibraslap = sources.find((entry) => entry.id === 'vibraslap');
   assert.equal(vibraslap.asset, 'instruments/cutouts/vibraslap-side.webp');
   assert.equal(vibraslap.source, 'https://commons.wikimedia.org/wiki/File:Vibraslap_-_side.jpg');

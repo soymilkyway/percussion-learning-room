@@ -238,17 +238,5 @@
     "license": "CC0",
     "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
     "changes": "Background removed from the color photograph; resized and padded to the site card ratio."
-  },
-  {
-    "id": "brake-drum",
-    "group": "instruments",
-    "asset": "instruments/cutouts/brake-drum.webp",
-    "source": "https://omeka-s.grinnell.edu/s/MusicalInstruments/item/2691",
-    "download": "https://digital-grinnell.nyc3.digitaloceanspaces.com/omeka-s/digital-grinnell/original/c3f55e324d1ea21f29e24268f6aab805.jpg",
-    "author": "Grinnell College Musical Instrument Collection",
-    "license": "Local review only. Before public reproduction, email the collection with the image and publication title; confirm photographer and add the required credit line.",
-    "changes": "One standalone brake drum cropped from collection photograph; background removed.",
-    "licenseUrl": "https://omeka-s.grinnell.edu/s/MusicalInstruments/page/about",
-    "publicationPending": true
   }
 ]
