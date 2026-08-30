@@ -114,12 +114,12 @@ export default function BandKnowledge() {
           <p>根據不同樂曲的編制與音色需求，管樂團還可能加入：</p>
           <ul>{additionalInstruments.map((instrument) => (
             <li className={`additional-instrument-card additional-instrument-card-${instrument.image}`} key={instrument.name}>
-              <div className="additional-instrument-visual"><img className={`additional-instrument-image additional-instrument-${instrument.image}`} src={siteUrl(`/images/band/cutouts/${instrument.image === "harp" ? "harp-color-cutout" : instrument.image === "electric-bass" ? "electric-bass-v2" : instrument.image}.webp`)} alt={`${instrument.name} ${instrument.en}`} /></div>
+              <div className="additional-instrument-visual"><img className={`additional-instrument-image additional-instrument-${instrument.image}`} src={siteUrl(`/images/band/cutouts/${instrument.image === "harp" ? "harp-user-provided" : instrument.image === "electric-bass" ? "electric-bass-v2" : instrument.image}.webp`)} alt={`${instrument.name} ${instrument.en}`} /></div>
               <div className="additional-instrument-copy"><strong>{instrument.name}</strong><span>{instrument.en}</span></div>
             </li>
           ))}</ul>
         </section>
-        <p className="image-credits">本頁管樂器與依曲目加入之樂器圖片取自 Wikimedia Commons，完整檔案與來源連結收錄於 <a href={siteUrl("/images/IMAGE_SOURCES.json")} target="_blank" rel="noreferrer">圖片來源清單 ↗</a>。</p>
+        <p className="image-credits">本頁圖片來源與素材說明收錄於 <a href={siteUrl("/images/IMAGE_SOURCES.json")} target="_blank" rel="noreferrer">圖片來源清單 ↗</a>。</p>
       </section>
     </SiteShell>
   );

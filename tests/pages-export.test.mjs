@@ -66,3 +66,20 @@ test("Export includes real CSS/font files and bypasses Jekyll", () => {
     assert.ok(html.includes(`${base}/fonts/${font}`), `Font URL is missing the project base path: ${font}`);
   }
 });
+
+test("GitHub Pages links back to the homepage glossary anchor", () => {
+  for (const route of routes) {
+    const html = readFileSync(path.join(out, route, "index.html"), "utf8");
+    assert.ok(html.includes(`href="${base}/#glossary"`), `Missing glossary link on /${route}`);
+  }
+});
+
+test("Glossary instrument links retain the project base path and matching anchors", () => {
+  const home = readFileSync(path.join(out, "index.html"), "utf8");
+  const instruments = readFileSync(path.join(out, "instruments/index.html"), "utf8");
+  for (const anchor of ["snare-drum", "timbales", "tubular-bells", "crotales", "finger-cymbals", "sleigh-bells"]) {
+    assert.ok(home.includes(`href="${base}/instruments/#${anchor}"`), `Missing glossary link ${anchor}`);
+    assert.ok(instruments.includes(`id="${anchor}"`), `Missing instrument anchor ${anchor}`);
+  }
+  assert.doesNotMatch(home, /href="[^"]*#bell-tree"/);
+});

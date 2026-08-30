@@ -6,7 +6,7 @@ import { instrumentGroups } from "../data/instruments";
 import { siteUrl } from "../lib/site-url";
 
 export const metadata: Metadata = { title: "樂器介紹" };
-const cutoutImages = new Set(["vibraslap", "slapstick", "flexatone", "agogo-bells"]);
+const cutoutImages = new Set(["vibraslap", "slapstick", "flexatone", "agogo-bells", "timbales", "crotales", "finger-cymbals", "sleigh-bells"]);
 
 export default function Instruments() {
   return (
@@ -26,7 +26,7 @@ export default function Instruments() {
             </header>
             <div className="instrument-grid">
               {group.items.map((item) => (
-                <article className="instrument-card" key={item.name}>
+                <article className="instrument-card" id={item.id ?? item.image} key={item.name}>
                   {item.image && <img className={`instrument-card-image instrument-image-${item.image}`} src={siteUrl(`/images/instruments/${cutoutImages.has(item.image) ? "cutouts" : "review"}/${item.image === "vibraslap" ? "vibraslap-side" : item.image}.webp`)} alt="" aria-hidden="true" />}
                   <div className="instrument-icon" aria-hidden="true">{group.icon}</div>
                   <div className="instrument-card-name"><h3>{item.name}</h3><p className="english">{item.en}</p></div>
@@ -51,7 +51,7 @@ export default function Instruments() {
             </div>
           </section>
         ))}
-        <p className="image-credits">特殊打擊樂器實拍圖取自 Wikimedia Commons，圖片經裁切與去背，來源與授權資訊收錄於 <a href={siteUrl("/images/IMAGE_SOURCES.json")} target="_blank" rel="noreferrer">圖片來源清單 ↗</a>。</p>
+        <p className="image-credits">本頁圖片來源與素材說明收錄於 <a href={siteUrl("/images/IMAGE_SOURCES.json")} target="_blank" rel="noreferrer">圖片來源清單 ↗</a>。</p>
       </section>
     </SiteShell>
   );

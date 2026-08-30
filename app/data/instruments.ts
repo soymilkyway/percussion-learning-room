@@ -1,4 +1,5 @@
 export type Instrument = {
+  id?: string;
   name: string;
   en: string;
   image?: string;
@@ -27,12 +28,13 @@ export const instrumentGroups: InstrumentGroup[] = [
     icon: "◉",
     intro: "鼓皮帶來有彈性的節奏與重音，金屬鈸鑼則有明亮或深沉的長共鳴；力度與止音會大幅改變聲音。",
     items: [
-      { name: "小鼓", en: "Snare Drum", image: "snare", description: "聲音清脆而銳利，底部響弦帶來細密的沙沙聲。", soundUrl: "https://www.youtube.com/shorts/b2AW7xi_9NM", soundLabel: "20世紀福斯片頭" },
+      { id: "snare-drum", name: "小鼓", en: "Snare Drum", image: "snare", description: "聲音清脆而銳利，底部響弦帶來細密的沙沙聲。", soundUrl: "https://www.youtube.com/shorts/b2AW7xi_9NM", soundLabel: "20世紀福斯片頭" },
       { name: "大鼓", en: "Bass Drum", image: "bass-drum", description: "聲音低沉厚重。", soundUrl: "https://www.youtube.com/shorts/CSwYAMOYa_E", soundLabel: "威爾第－安魂曲〈震怒之日〉（Dies Irae）" },
       { name: "筒鼓", en: "Tom-tom", image: "tom-tom", description: "音色圓潤飽滿、沒有小鼓的響弦沙聲；不同尺寸能形成由高到低的鼓聲層次。", soundUrl: "https://www.youtube.com/watch?v=-mgV_g0Wnwg&t=61s", soundLabel: "樽屋雅徳－マゼランの未知なる大陸への挑戦" },
       { name: "康加鼓", en: "Conga", image: "conga", description: "音色溫暖而有彈性，可奏出開放音、悶音與清脆掌擊，形成富有層次的拉丁節奏。", soundUrl: "https://www.youtube.com/shorts/hBkVNcrYh3M" },
       { name: "邦哥鼓", en: "Bongo", image: "bongo", description: "聲音短促明亮，高低兩顆鼓能彼此對答，手指敲奏時帶有靈活鮮明的拉丁節奏感。", soundUrl: "https://youtu.be/Bot7XxatiBE?si=kxjjoOMfarbWhTzX&t=47", soundLabel: "《不可能的任務》主題曲" },
       { name: "定音鼓", en: "Timpani", image: "timpani", description: "具有明確音高與深厚共鳴，既能演奏柔和的低音滾奏，也能帶來具有重量感的強烈重音。", soundUrl: "https://www.youtube.com/shorts/4B9LZWSGupM", soundLabel: "理查・史特勞斯－查拉圖斯特拉如是說〈日出〉" },
+      { id: "timbales", name: "天巴鼓", en: "Timbales", image: "timbales", description: "成對使用的單面鼓，能演奏清脆、明亮而有穿透力的拉丁節奏。", soundUrl: "https://www.youtube.com/shorts/RJ8VkJzVisw" },
       { name: "雙鈸（手鈸）", en: "Crash Cymbals", image: "crash-cymbals", description: "碰擊時會爆發明亮寬廣的金屬聲，泛音豐富且餘音長，常用於高潮與強烈重音。", soundUrl: "https://www.youtube.com/shorts/jcSIgkr34q4", soundLabel: "柴可夫斯基－羅密歐與茱麗葉" },
       { name: "吊鈸", en: "Suspended Cymbal", image: "suspended-cymbal", description: "通常用來當作樂句之間過度用的音效。單擊時帶有柔和閃亮的金屬聲；滾奏則能從細微聲響逐漸擴展成寬廣的音牆。", soundUrl: "https://www.youtube.com/shorts/o3fnwOFVz6s" },
       { name: "大鑼", en: "Tam-tam", image: "tam-tam", description: "聲音低沉，演奏時具有巨大壓迫感，餘音會維持很久。", soundUrl: "https://www.youtube.com/watch?v=JzkkbPQNufc" },
@@ -47,9 +49,10 @@ export const instrumentGroups: InstrumentGroup[] = [
     items: [
       { name: "木琴", en: "Xylophone", image: "xylophone", description: "音色乾脆明亮、音頭清楚且餘音較短，快速旋律也能保持清晰並穿透樂團。", soundUrl: "https://www.youtube.com/shorts/xYzOdlFOoE8", soundLabel: "Sabre Dance（劍舞）" },
       { name: "馬林巴木琴", en: "Marimba", image: "marimba", description: "具有溫暖深厚的木質音色，共鳴柔和；低音圓潤飽滿，高音則清楚但不尖銳。", soundUrl: "https://www.youtube.com/shorts/cB6eSQuwSEw", soundLabel: "大家熟悉的 iPhone 鈴聲" },
-      { name: "鐘琴", en: "Glockenspiel", image: "glockenspiel", description: "聲音明亮如小鐘，音高清楚、餘音長，即使在完整樂團中也有很強的穿透力。", soundUrl: "https://www.youtube.com/shorts/H6FlnEFN7OU", soundLabel: "《哈利波特》嘿美主題曲（原曲開頭由鋼片琴演奏）" },
+      { name: "鐘琴", en: "Glockenspiel / Bells", image: "glockenspiel", description: "聲音明亮如小鐘，音高清楚、餘音長，即使在完整樂團中也有很強的穿透力。", soundUrl: "https://www.youtube.com/shorts/H6FlnEFN7OU", soundLabel: "《哈利波特》嘿美主題曲（原曲開頭由鋼片琴演奏）" },
       { name: "顫音琴（鐵琴）", en: "Vibraphone", image: "vibraphone", description: "帶有柔和的金屬音色與持續共鳴，開啟馬達後還會產生波動般的顫音效果。", soundUrl: "https://www.instagram.com/reel/DHYSDeKTIcB/" },
-      { name: "管鐘", en: "Chimes / Tubular Bells", image: "chimes", description: "聲音莊嚴宏亮，像大型教堂鐘；音高明確、餘音悠長，常用來營造隆重氣氛。", soundUrl: "https://www.youtube.com/shorts/6USFjDqW4T4" },
+      { id: "tubular-bells", name: "管鐘", en: "Chimes / Tubular Bells", image: "chimes", description: "聲音莊嚴宏亮，像大型教堂鐘；音高明確、餘音悠長，常用來營造隆重氣氛。", soundUrl: "https://www.youtube.com/shorts/6USFjDqW4T4" },
+      { id: "crotales", name: "饒鈸", en: "Crotales", image: "crotales", description: "由一組具有固定音高的小型金屬圓盤組成，聲音明亮而且餘音悠長。", soundUrl: "https://www.youtube.com/shorts/l8HA4DrNlLE" },
     ],
   },
   {
@@ -66,10 +69,11 @@ export const instrumentGroups: InstrumentGroup[] = [
       { name: "響板", en: "Castanets", image: "castanets", description: "聲音短促、乾脆而帶木質感，快速連擊時會形成鮮明且具有舞蹈感的節奏。", soundUrl: "https://youtu.be/f9xdSEOZ3DA?si=RAzX9xlu4waDa-U4&t=30", soundLabel: "El Camino Real" },
       { name: "木魚", en: "Wood Block", image: "wood-block", description: "聲音乾燥、短促且帶有空心木質共鳴，不同大小能產生清楚的高低音差。", soundUrl: "https://youtu.be/m1Xk9z7Ihoo?si=17scwZsYsVcZTObB&t=414", soundLabel: "《七夕》中的木魚聲音" },
       { name: "牛鈴", en: "Cowbell", image: "cowbell", description: "聲音明亮、堅硬且帶有明顯金屬聲。", soundUrl: "https://www.youtube.com/watch?v=OKkxM1TSDd4" },
-      { name: "雪鈴", en: "Sleigh Bells", image: "sleigh-bells", description: "多顆鈴片會形成密集明亮的叮噹聲，既能演奏短促重音，也能製造連續閃爍的聲響。", soundUrl: "https://www.youtube.com/watch?v=-bNmAF_jJck" },
+      { id: "sleigh-bells", name: "雪鈴", en: "Sleigh Bells", image: "sleigh-bells", description: "多顆鈴片會形成密集明亮的叮噹聲，既能演奏短促重音，也能製造連續閃爍的聲響。", soundUrl: "https://www.youtube.com/shorts/_4sWSBiajv0" },
       { name: "風鈴", en: "Wind Chime", image: "wind-chime", description: "許多高音金屬聲依序滑過，形成輕盈閃爍、逐漸消散的聲音瀑布。", soundUrl: "https://www.youtube.com/watch?v=ym9tXVKHdkw" },
       { name: "卡巴薩", en: "Cabasa", image: "cabasa", description: "會產生細密而略帶粗糙感的摩擦沙聲，可演奏短促音點，也能形成連續滾動的節奏。", soundUrl: "https://www.youtube.com/shorts/C4aQtcrfLCA" },
       { name: "響棒", en: "Claves", image: "claves", description: "聲音清脆、集中而帶有硬木質感，音量雖不大，卻能清楚穿透其他樂器。", soundUrl: "https://www.youtube.com/watch?v=BODYFCnWLC0" },
+      { id: "finger-cymbals", name: "手指鈸", en: "Finger Cymbals", image: "finger-cymbals", description: "成對碰擊的小型金屬鈸，聲音清亮、集中而且餘音細緻。", soundUrl: "https://youtu.be/R1dMVof3OGc?t=11" },
     ],
   },
   {

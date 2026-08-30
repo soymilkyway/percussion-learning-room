@@ -6,7 +6,7 @@ import sharp from 'sharp';
 const images = new URL('../public/images/', import.meta.url);
 test('公開實拍圖具備統一畫布、透明背景與來源', async () => {
   const sources = JSON.parse(await fs.readFile(new URL('IMAGE_SOURCES.json', images), 'utf8'));
-  assert.equal(sources.length, 20);
+  assert.equal(sources.length, 24);
   const vibraslap = sources.find((entry) => entry.id === 'vibraslap');
   assert.equal(vibraslap.asset, 'instruments/cutouts/vibraslap-side.webp');
   assert.equal(vibraslap.source, 'https://commons.wikimedia.org/wiki/File:Vibraslap_-_side.jpg');
@@ -24,7 +24,7 @@ test('公開實拍圖具備統一畫布、透明背景與來源', async () => {
     assert.ok(opaque>500,entry.asset+' missing instrument');
     assert.ok(transparent>info.width*info.height*.3,entry.asset+' missing transparency');
     assert.equal(data[3],0,entry.asset+' corner is not transparent');
-    assert.ok(entry.source.startsWith('https://'));
+    assert.ok(entry.source.startsWith('https://')||entry.source.startsWith('user-provided:'));
     assert.ok(entry.author&&entry.license&&entry.changes);
   }
 });

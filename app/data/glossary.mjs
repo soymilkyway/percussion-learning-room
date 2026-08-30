@@ -1,0 +1,45 @@
+// Each row is [Chinese name, English name, abbreviation, instrument anchor].
+// Leave unavailable abbreviations or anchors empty.
+export const percussionGlossary = [
+  { id: "drums", title: "鼓類", rows: [
+    ["小鼓", "Snare Drum", "S.D.", "snare-drum"],
+    ["大鼓", "Bass Drum", "B.D.", "bass-drum"],
+    ["筒鼓", "Tom-tom", "Tom", "tom-tom"],
+    ["邦哥鼓", "Bongo", "", "bongo"],
+    ["康加鼓", "Conga", "", "conga"],
+    ["定音鼓", "Timpani", "Timp.", "timpani"],
+    ["天巴鼓", "Timbales", "", "timbales"],
+    ["爵士鼓/鼓組", "Drumset / Drums", "", ""],
+  ] },
+  { id: "cymbals", title: "鈸與鑼類", rows: [
+    ["手鈸／雙鈸", "Crash Cymbals", "Cr. Cyms.", "crash-cymbals"],
+    ["吊鈸", "Suspended Cymbal", "Sus. Cym.", "suspended-cymbal"],
+    ["鑼", "Tam-tam / Gong", "", "tam-tam"],
+  ] },
+  { id: "mallets", title: "琴類", rows: [
+    ["高音木琴", "Xylophone", "Xylo.", "xylophone"],
+    ["馬林巴木琴", "Marimba", "", "marimba"],
+    ["鐵琴／顫音琴", "Vibraphone", "Vib.", "vibraphone"],
+    ["鐘琴", "Glockenspiel / Bells", "Glock.", "glockenspiel"],
+    ["管鐘", "Chimes / Tubular Bells", "", "tubular-bells"],
+    ["饒鈸", "Crotales", "", "crotales"],
+  ] },
+  { id: "accessories", title: "小樂器", rows: [
+    ["鈴鼓", "Tambourine", "Tamb.", "tambourine"],
+    ["三角鐵", "Triangle", "Tri.", "triangle"],
+    ["風鈴", "Wind Chime", "W. Chime", "wind-chime"],
+    ["樹鈴", "Bell Tree", "", ""],
+    ["木魚", "Wood Block", "W.B.", "wood-block"],
+    ["牛鈴", "Cowbell", "", "cowbell"],
+    ["沙鈴", "Shaker", "", "shaker"],
+    ["沙槌", "Maracas", "", "maracas"],
+    ["卡巴薩", "Cabasa", "", "cabasa"],
+    ["雪鈴", "Sleigh Bells", "S. Bells", "sleigh-bells"],
+    ["響棒", "Claves", "Clv.", "claves"],
+    ["響板", "Castanets", "Cast.", "castanets"],
+    ["拍板", "Whip", "", "slapstick"],
+    ["震盪器", "Vibra-slap", "", "vibraslap"],
+    ["阿哥哥鈴", "Agogo Bells", "Agogo", "agogo-bells"],
+    ["手指鈸", "Finger Cymbals", "Finger Cyms", "finger-cymbals"],
+  ] },
+];

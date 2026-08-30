@@ -230,13 +230,56 @@
   {
     "id": "harp",
     "group": "band",
-    "file": "File:Pedal Harp MET DT698.jpg",
-    "asset": "band/cutouts/harp-color-cutout.webp",
-    "source": "https://commons.wikimedia.org/wiki/File:Pedal_Harp_MET_DT698.jpg",
-    "download": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Pedal_Harp_MET_DT698.jpg/960px-Pedal_Harp_MET_DT698.jpg",
-    "author": "The Metropolitan Museum of Art (photograph); Lyon & Healy (instrument)",
-    "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "changes": "Background removed from the color photograph; resized and padded to the site card ratio."
+    "file": "Harp_TR.webp",
+    "asset": "band/cutouts/harp-user-provided.webp",
+    "source": "user-provided:Harp_TR.webp",
+    "author": "User-provided asset",
+    "license": "Provided for use on this website",
+    "licenseUrl": "",
+    "changes": "The supplied transparent WebP was proportionally resized and centered on the site's standard transparent card canvas; no new background removal was needed."
+  },
+  {
+    "id": "timbales",
+    "group": "instruments",
+    "file": "Timbales.png",
+    "asset": "instruments/cutouts/timbales.webp",
+    "source": "user-provided:Timbales.png",
+    "author": "User-provided asset",
+    "license": "Provided for use on this website",
+    "licenseUrl": "",
+    "changes": "The supplied transparent PNG was proportionally resized and centered on the site's standard transparent card canvas; no new background removal was needed."
+  },
+  {
+    "id": "crotales",
+    "group": "instruments",
+    "file": "Crotales.webp",
+    "asset": "instruments/cutouts/crotales.webp",
+    "source": "user-provided:Crotales.webp",
+    "author": "User-provided asset",
+    "license": "Provided for use on this website",
+    "licenseUrl": "",
+    "changes": "The supplied transparent WebP was proportionally resized and centered on the site's standard transparent card canvas; no new background removal was needed."
+  },
+  {
+    "id": "sleigh-bells",
+    "group": "instruments",
+    "file": "SleighBells.png",
+    "asset": "instruments/cutouts/sleigh-bells.webp",
+    "source": "user-provided:SleighBells.png",
+    "author": "User-provided asset",
+    "license": "Provided for use on this website",
+    "licenseUrl": "",
+    "changes": "The supplied transparent PNG was proportionally resized and centered on the site's standard transparent card canvas; no new background removal was needed."
+  },
+  {
+    "id": "finger-cymbals",
+    "group": "instruments",
+    "file": "FingerCymbals.webp",
+    "asset": "instruments/cutouts/finger-cymbals.webp",
+    "source": "user-provided:FingerCymbals.webp",
+    "author": "User-provided asset",
+    "license": "Provided for use on this website",
+    "licenseUrl": "",
+    "changes": "The supplied transparent WebP was proportionally resized and centered on the site's standard transparent card canvas; no new background removal was needed."
   }
 ]

@@ -12,7 +12,7 @@
     "test:pages": "npm run build:pages && node --test tests/pages-export.test.mjs",
     "check:publication": "node scripts/check-public-assets.mjs",
     "start": "vinext start",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs tests/image-assets.test.mjs",
+    "test": "npm run build && node --test tests/rendered-html.test.mjs tests/image-assets.test.mjs tests/glossary-search.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern work --ignore-pattern outputs --ignore-pattern .npm-cache"
   },
   "dependencies": {

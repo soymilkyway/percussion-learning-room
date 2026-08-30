@@ -1,13 +1,13 @@
-/* eslint-disable @next/next/no-img-element -- YouTube thumbnails are remote images with dynamic video IDs */
 import type { Metadata } from "next";
+import { LazyYouTubeEmbed } from "../components/LazyYouTubeEmbed";
 import { PageIntro } from "../components/PageIntro";
 import { SiteShell } from "../components/SiteShell";
 
 export const metadata: Metadata = { title: "音樂賞析" };
 
-// 新增曲目：複製任一首 song，修改 title、subtitle、credit、description、youtubeUrl 與 videoId。
+// 新增曲目：複製任一首 song，修改 title、subtitle、credit、description 與 youtubeUrl。
 // subtitle 是顯示在原文曲名下方的中文名稱；沒有副標題時可留空字串。
-// videoId 是 YouTube 網址中 v= 後面的文字，會用來產生影片縮圖。
+// 播放器會自行從一般 YouTube 或 youtu.be 網址取得影片 ID。
 const categories = [
   {
     id: "classics",
@@ -21,7 +21,6 @@ const categories = [
         credit: "作曲：James Swearingen",
         description: "經常放在各個頒獎典禮，又或是管樂團演出的第一首曲子。具有容易記住的旋律、鮮明節奏與有趣的打擊樂聲部，是 James Swearingen 廣受學生管樂團歡迎的代表作品之一。",
         youtubeUrl: "https://youtu.be/BWwF_QJpvH0?si=fYDCQIaRi_6_xtmK&t=14",
-        videoId: "BWwF_QJpvH0",
         sourceUrl: "https://barnhouse.com/product/012-1901-00/",
         sourceLabel: "C. L. Barnhouse 樂譜介紹",
       },
@@ -31,7 +30,6 @@ const categories = [
         credit: "作曲：酒井格（Itaru Sakai）",
         description: "作品描寫被銀河分隔的織女與彥星，只能在每年七月七日相會的七夕傳說。中段的薩克斯風與上低音號獨奏象徵故事中的兩位主角，讓幻想色彩與抒情旋律交織。",
         youtubeUrl: "https://youtu.be/m1Xk9z7Ihoo?si=GkvlHfcDDKE7evIv&t=8",
-        videoId: "m1Xk9z7Ihoo",
         sourceUrl: "https://www.brain-shop.net/shop/g/gDHP0920450-010/?ismodesmartphone=on",
         sourceLabel: "Brain Music 樂譜介紹",
       },
@@ -49,7 +47,6 @@ const categories = [
         credit: "作曲：John Philip Sousa",
         description: "美國最廣為人知的行進曲之一，1987 年更由美國國會正式定為美國國家行進曲。中段著名的短笛對位旋律極具辨識度，是管樂團表演的經典片段",
         youtubeUrl: "https://www.youtube.com/watch?v=i9o6412lwGA",
-        videoId: "i9o6412lwGA",
         sourceUrl: "https://www.loc.gov/collections/patriotic-melodies/articles-and-essays/stars-and-stripes-forever/",
         sourceLabel: "美國國會圖書館",
       },
@@ -59,7 +56,6 @@ const categories = [
         credit: "作曲：田坂直樹",
         description: "2015 年全日本吹奏樂大賽課題曲。作曲者以風的旅程為構想：從帶有西班牙色彩的段落出發，在中段抵達溫暖抒情的普羅旺斯，最後再回到充滿活力的音樂。",
         youtubeUrl: "https://youtu.be/rBME62reb5Y?si=XEBa4EBWOHgfq3Vg&t=22",
-        videoId: "rBME62reb5Y",
         sourceUrl: "https://ndlsearch.ndl.go.jp/books/R100000002-I034019127",
         sourceLabel: "日本國立國會圖書館",
       },
@@ -77,7 +73,6 @@ const categories = [
         credit: "原曲：Hans Zimmer、Elton John｜編曲：John Higgins",
         description: "將《獅子王》的電影音樂與歌曲重新放進管樂團的音色中。Hans Zimmer 的配樂、Elton John 的歌曲旋律，透過木管、銅管與打擊樂呈現電影的壯闊感。",
         youtubeUrl: "https://www.youtube.com/watch?v=fPWVGZXIsY4",
-        videoId: "fPWVGZXIsY4",
         sourceUrl: "https://hans-zimmer.com/product/the-lion-king/",
         sourceLabel: "Hans Zimmer 官方作品資料",
       },
@@ -87,7 +82,6 @@ const categories = [
         credit: "作曲：椎名豪｜編曲：今村愛紀",
         description: "原曲是動畫《鬼滅之刃》第 19 話〈火之神〉的插曲。這個吹奏樂版本由今村愛紀編入四樂章《鬼滅之刃》交響組曲，並作為其中的第三樂章。",
         youtubeUrl: "https://youtu.be/p6V5pMCMNPk?si=edCuIHwD6S7pZSjB&t=8",
-        videoId: "p6V5pMCMNPk",
         sourceUrl: "https://www.youtube.com/watch?v=p6V5pMCMNPk",
         sourceLabel: "演出影片公開說明",
       },
@@ -97,7 +91,6 @@ const categories = [
         credit: "原曲作曲：植松伸夫",
         description: "大阪桐蔭吹奏樂部的版本選用 FF 最終幻想系列主題與戰鬥音樂，讓遊戲中熟悉的旋律透過完整管樂團重新展開。影片公開說明未列出此版本的編曲者。",
         youtubeUrl: "https://www.youtube.com/watch?v=S-XoFfnhAVU",
-        videoId: "S-XoFfnhAVU",
         sourceUrl: "https://www.youtube.com/watch?v=S-XoFfnhAVU",
         sourceLabel: "演出影片公開說明",
       },
@@ -107,7 +100,6 @@ const categories = [
         credit: "作曲者：無法找到可靠資料",
         description: "寶可夢官方將這首主題曲設計為以管樂器為核心的吹奏樂作品，並公開完整總譜、各聲部樂譜及參考演奏，讓玩家也能真正組團演奏遊戲音樂。",
         youtubeUrl: "https://youtu.be/BEtfH5P0PSk?si=UwqkNEunB-ZgXRd3&t=33",
-        videoId: "BEtfH5P0PSk",
         sourceUrl: "https://www.pokemon.co.jp/info/2022/07/220722_cm02.html",
         sourceLabel: "寶可夢官方網站",
       },
@@ -125,7 +117,6 @@ const categories = [
         credit: "詞曲：五月天阿信｜編曲：葉欣儀（Yap Sin Yee）",
         description: "由〈倔強〉、〈知足〉、〈溫柔〉與〈戀愛ing〉串成的組曲。不同速度與情緒的歌曲被重新連接，讓管樂團一次展現抒情、熱情與舞台感染力。",
         youtubeUrl: "https://www.youtube.com/watch?v=cZ2b2JjAZrY",
-        videoId: "cZ2b2JjAZrY",
         sourceUrl: "https://www.ntso.gov.tw/cp.aspx?n=9500",
         sourceLabel: "國立臺灣交響樂團演出資料",
       },
@@ -135,7 +126,6 @@ const categories = [
         credit: "作曲：大森元貴｜編曲：郷間幹男",
         description: "將 Mrs. GREEN APPLE 多首廣受歡迎的歌曲濃縮成吹奏樂組曲。",
         youtubeUrl: "https://www.youtube.com/watch?v=tp_xBhtxl-o",
-        videoId: "tp_xBhtxl-o",
         sourceUrl: "https://www.youtube.com/watch?v=tp_xBhtxl-o",
         sourceLabel: "演出影片公開說明",
       },
@@ -162,10 +152,7 @@ export default function Appreciation() {
             <div className="music-grid">
               {category.songs.map((song) => (
                 <article className="music-card" key={song.youtubeUrl}>
-                  <a className="music-thumbnail" href={song.youtubeUrl} target="_blank" rel="noreferrer" aria-label={`前往 YouTube 觀看${song.title}${song.subtitle ? `（${song.subtitle}）` : ""}`}>
-                    <img src={`https://i.ytimg.com/vi/${song.videoId}/hqdefault.jpg`} alt={`${song.title}${song.subtitle ? `（${song.subtitle}）` : ""} YouTube 縮圖`} loading="lazy" />
-                    <span>在 YouTube 觀看 <b aria-hidden="true">▶</b></span>
-                  </a>
+                  <LazyYouTubeEmbed youtubeUrl={song.youtubeUrl} title={`${song.title}${song.subtitle ? `（${song.subtitle}）` : ""}`} />
                   <div className="music-card-body">
                     <h3 className="music-title">
                       <span className="music-title-main">{song.title}</span>
