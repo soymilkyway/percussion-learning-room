@@ -54,17 +54,16 @@ export function GlossarySearch({ entries }: { entries: GlossarySearchEntry[] }) 
               ))}
               {showEasterEgg && (
                 <li>
-                  <span className="glossary-result-group">隱藏樂器</span>
+                  <span className="glossary-result-group">小樂器</span>
                   <a
                     className="glossary-result-link"
                     href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <strong>瑞克響鈴（絕不放棄你）</strong>
-                    <small lang="en">Rick Roll Bell</small>
+                    <strong>鈴</strong>
+                    <small lang="en">Ring</small>
                   </a>
-                  <b>R.</b>
                 </li>
               )}
             </ul>
