@@ -43,6 +43,20 @@ export default function Basics() {
           ))}
         </div>
         <aside className="grip-reminder"><strong>握法提醒</strong><p>鼓棒握法只是協助一開始學習握棒的方式，習慣之後自己可以根據舒服的角度握鼓棒</p></aside>
+        <section className="notation-placeholder" aria-labelledby="notation-placeholder-title">
+          <div className="notation-placeholder-heading">
+            <span className="notation-placeholder-icon" aria-hidden="true">♪</span>
+            <div>
+              <p className="eyebrow">COMING SOON</p>
+              <h2 id="notation-placeholder-title">常見樂譜記號</h2>
+              <p>認識譜面上常見的速度、強弱、拍號與演奏記號。</p>
+            </div>
+          </div>
+          <div className="notation-placeholder-status">
+            <strong>內容整理中／施工中</strong>
+            <p>這是預計新增的學習單元，目前尚未開放；網站其他內容仍可正常使用。</p>
+          </div>
+        </section>
         <section className="grip-sources" aria-labelledby="grip-sources-title">
           <h2 id="grip-sources-title">參考資料</h2>
           <a href="https://jeremydrums.pixnet.net/blog/posts/5053459908" target="_blank" rel="noopener noreferrer">Jeremy Drums：鼓棒握法文章 ↗</a>

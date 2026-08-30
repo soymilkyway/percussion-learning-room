@@ -215,6 +215,10 @@ test("演奏基本功顯示三種對稱式握法與簡易示意圖", async () =>
   assert.match(html, /德式握法[\s\S]*法式握法[\s\S]*美式握法/);
   assert.match(html, /形成約 90°/);
   assert.match(html, /鼓棒尖端夾角約 45°/);
+  assert.match(html, /id="notation-placeholder-title">常見樂譜記號/);
+  assert.match(html, /認識譜面上常見的速度、強弱、拍號與演奏記號/);
+  assert.match(html, /內容整理中／施工中/);
+  assert.match(html, /網站其他內容仍可正常使用/);
 });
 
 test("音樂賞析的中文曲名以獨立第二行呈現並使用更新後連結", async () => {
