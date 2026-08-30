@@ -34,7 +34,7 @@ export default function Instruments() {
                     {item.soundUrl && (
                       <div className="video-link-row">
                         <dt>聲音示範</dt>
-                        <dd><a href={item.soundUrl} target="_blank" rel="noreferrer">{item.soundLabel ?? `觀看${item.name}聲音示範`} <span aria-hidden="true">↗</span></a></dd>
+                        <dd><a href={item.soundUrl} target="_blank" rel="noopener noreferrer">{item.soundLabel ?? `觀看${item.name}聲音示範`} <span aria-hidden="true">↗</span></a></dd>
                       </div>
                     )}
                     {item.note && <div><dt>注意</dt><dd>{item.note}</dd></div>}
@@ -51,7 +51,7 @@ export default function Instruments() {
             </div>
           </section>
         ))}
-        <p className="image-credits">本頁圖片來源與素材說明收錄於 <a href={siteUrl("/images/IMAGE_SOURCES.json")} target="_blank" rel="noreferrer">圖片來源清單 ↗</a>。</p>
+        <p className="image-credits">本頁圖片來源與素材說明收錄於 <a href={siteUrl("/images/IMAGE_SOURCES.json")} target="_blank" rel="noopener noreferrer">圖片來源清單 ↗</a>。</p>
       </section>
     </SiteShell>
   );

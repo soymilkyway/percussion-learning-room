@@ -16,15 +16,20 @@ export async function generateMetadata(): Promise<Metadata> {
     origin = host === "percussion-learning-room.boichen1512.chatgpt.site"
       ? `https://${host}` : "http://localhost:3000";
   }
-  const image = new URL(siteUrl("/og-v2.png"), origin).href;
+  const image = new URL(siteUrl("/og-v3.png"), origin).href;
   return {
     title: { default: "打擊樂器學習室", template: "%s｜打擊樂器學習室" },
     description: "給零基礎學員的打擊樂器行動筆記：認識樂理、演奏、樂器、管樂團配置與推薦曲目。",
-    openGraph: { title: "打擊樂器學習室", description: "聽見節拍，開始你的打擊旅程。", type: "website", images: [{ url: image }] },
+    openGraph: {
+      title: "打擊樂器學習室",
+      description: "聽見節拍，開始你的打擊旅程。",
+      type: "website",
+      images: [{ url: image, width: 1731, height: 909, alt: "打擊樂器學習室－給剛加入管樂打擊的你" }],
+    },
     twitter: { card: "summary_large_image", title: "打擊樂器學習室", description: "聽見節拍，開始你的打擊旅程。", images: [image] },
   };
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="zh-Hant"><head><style dangerouslySetInnerHTML={{ __html: fontCss }} /></head><body>{children}</body></html>;
+  return <html lang="zh-Hant"><head><style>{fontCss}</style></head><body>{children}</body></html>;
 }

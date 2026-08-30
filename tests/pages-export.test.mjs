@@ -32,7 +32,7 @@ for (const route of routes) {
     assert.match(html, /打擊樂器學習室/);
     assert.match(html, /<h1[\s>]/);
     assert.doesNotMatch(html, /Building your site|codex-preview/);
-    assert.ok(html.includes(`${origin}${base}/og-v2.png`), "Absolute social preview URL");
+    assert.ok(html.includes(`${origin}${base}/og-v3.png`), "Absolute social preview URL");
     for (const match of html.matchAll(/\b(?:src|href)="([^"<>]+)"/g)) {
       assertLocalTarget(match[1].replaceAll("&amp;", "&"), `${route}/`);
     }

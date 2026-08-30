@@ -45,9 +45,9 @@ export default function Basics() {
         <aside className="grip-reminder"><strong>握法提醒</strong><p>鼓棒握法只是協助一開始學習握棒的方式，習慣之後自己可以根據舒服的角度握鼓棒</p></aside>
         <section className="grip-sources" aria-labelledby="grip-sources-title">
           <h2 id="grip-sources-title">參考資料</h2>
-          <a href="https://jeremydrums.pixnet.net/blog/posts/5053459908" target="_blank" rel="noreferrer">Jeremy Drums：鼓棒握法文章 ↗</a>
-          <a href="https://www.drumeo.com/beat/how-to-hold-drumsticks/" target="_blank" rel="noreferrer">Drumeo：三種對稱式握法說明 ↗</a>
-          <a href="https://ae.vicfirth.com/wp-content/uploads/Lesson-32.pdf" target="_blank" rel="noreferrer">Vic Firth：鼓棒與握法術語資料 ↗</a>
+          <a href="https://jeremydrums.pixnet.net/blog/posts/5053459908" target="_blank" rel="noopener noreferrer">Jeremy Drums：鼓棒握法文章 ↗</a>
+          <a href="https://www.drumeo.com/beat/how-to-hold-drumsticks/" target="_blank" rel="noopener noreferrer">Drumeo：三種對稱式握法說明 ↗</a>
+          <a href="https://ae.vicfirth.com/wp-content/uploads/Lesson-32.pdf" target="_blank" rel="noopener noreferrer">Vic Firth：鼓棒與握法術語資料 ↗</a>
         </section>
       </section>
     </SiteShell>

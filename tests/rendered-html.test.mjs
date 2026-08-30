@@ -5,7 +5,8 @@ async function render(path = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}-${path}`);
   const { default: worker } = await import(workerUrl.href);
-  return worker.fetch(
+  const fetchHandler = typeof worker === "function" ? worker : worker.fetch.bind(worker);
+  return fetchHandler(
     new Request(`http://localhost${path}`, { headers: { accept: "text/html" } }),
     { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
     { waitUntil() {}, passThroughOnException() {} },
@@ -51,6 +52,9 @@ test("首頁對照表以四個分類呈現完整33種樂器，中英文同列並
   assert.equal((html.match(/class="glossary-name"/g) ?? []).length, 33);
   assert.equal((html.match(/class="glossary-english"/g) ?? []).length, 33);
   assert.equal((html.match(/<details class="glossary-group"/g) ?? []).length, 4);
+  assert.match(html, /手鈸 \/ 雙鈸/);
+  assert.match(html, /鐵琴 \/ 顫音琴/);
+  assert.match(html, /V-slap/);
   assert.match(html, /<summary>鼓類/);
   assert.match(html, /<summary>鈸與鑼類/);
   assert.match(html, /<summary>琴類/);
@@ -158,8 +162,10 @@ test("全站頁尾顯示非商業教學用途聲明", async () => {
   const html = await response.text();
   assert.equal(response.status, 200);
   assert.match(html, /本網站僅供教學用途，非用於商業上之行為/);
-  assert.match(html, /製作者 \/ 問題回報：Boichen/);
-  assert.match(html, /href="https:\/\/www\.instagram\.com\/boichen0731\/"[^>]*target="_blank"[^>]*>Instagram<\/a>/);
+  assert.match(html, /製作者 \/ 意見回饋：柏/);
+  assert.match(html, /href="https:\/\/www\.instagram\.com\/boichen0731\/"[^>]*target="_blank"/);
+  assert.match(html, /class="instagram-icon"/);
+  assert.match(html, />Instagram<\/span>/);
   assert.doesNotMatch(html, /給第一次接觸音樂的你：先聽、再數、最後演奏。/);
 });
 
@@ -175,7 +181,7 @@ test("管樂團知識頁提供三個可點選配置區域", async () => {
   assert.match(html, /打擊樂器/);
   assert.match(html, /短笛/);
   assert.match(html, /Bass Clarinet/);
-  assert.match(html, /Soprano／Alto／Tenor／Baritone/);
+  assert.match(html, /Soprano \/ Alto \/ Tenor \/ Baritone/);
   assert.match(html, /Euphonium/);
   assert.match(html, /Double Bass/);
   assert.match(html, /樂團用來增厚低音或是有樂曲特別需要才會出現/);

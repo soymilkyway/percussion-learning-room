@@ -26,7 +26,17 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         <div className="footer-brand"><span className="brand-mark" aria-hidden="true">●</span><strong>打擊樂器學習室</strong></div>
         <div className="footer-meta">
           <p>本網站僅供教學用途，非用於商業上之行為</p>
-          <p className="footer-contact">製作者 / 問題回報：Boichen · <a href="https://www.instagram.com/boichen0731/" target="_blank" rel="noreferrer">Instagram</a></p>
+          <p className="footer-contact">
+            <span>製作者 / 意見回饋：柏 ·</span>
+            <a href="https://www.instagram.com/boichen0731/" target="_blank" rel="noopener noreferrer">
+              <svg className="instagram-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle className="instagram-icon-dot" cx="17.4" cy="6.7" r="1" />
+              </svg>
+              <span>Instagram</span>
+            </a>
+          </p>
         </div>
         <a href="#main">回到頁首 <span aria-hidden="true">↑</span></a>
       </footer>

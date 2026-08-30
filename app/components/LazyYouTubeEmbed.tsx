@@ -17,7 +17,7 @@ export function LazyYouTubeEmbed({ youtubeUrl, title }: { youtubeUrl: string; ti
             className="music-embed"
             src={embedUrl}
             title={`${title} YouTube 影片`}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="autoplay; encrypted-media; picture-in-picture"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           />
@@ -30,7 +30,7 @@ export function LazyYouTubeEmbed({ youtubeUrl, title }: { youtubeUrl: string; ti
       ) : (
         <div className="music-video-unavailable">此影片無法建立內嵌播放器</div>
       )}
-      <a className="music-youtube-link" href={youtubeUrl} target="_blank" rel="noreferrer">前往 YouTube 觀看 <span aria-hidden="true">↗</span></a>
+      <a className="music-youtube-link" href={youtubeUrl} target="_blank" rel="noopener noreferrer">前往 YouTube 觀看 <span aria-hidden="true">↗</span></a>
     </div>
   );
 }

@@ -18,7 +18,7 @@ const families = [
       { name: "豎笛", en: "Clarinet", image: "clarinet" },
       { name: "低音豎笛", en: "Bass Clarinet", image: "bass-clarinet" },
       { name: "雙簧管", en: "Oboe", image: "oboe" },
-      { name: "薩克斯風", en: "Saxophone", detail: "圖片為 Alto；家族包含 Soprano／Alto／Tenor／Baritone", image: "saxophone" },
+      { name: "薩克斯風", en: "Saxophone", detail: "圖片為 Alto；家族包含 Soprano / Alto / Tenor / Baritone", image: "saxophone" },
       { name: "低音管", en: "Bassoon", image: "bassoon" },
       { name: "低音提琴", en: "Double Bass", detail: "樂團用來增厚低音或是有樂曲特別需要才會出現", image: "double-bass" },
     ],
@@ -119,7 +119,7 @@ export default function BandKnowledge() {
             </li>
           ))}</ul>
         </section>
-        <p className="image-credits">本頁圖片來源與素材說明收錄於 <a href={siteUrl("/images/IMAGE_SOURCES.json")} target="_blank" rel="noreferrer">圖片來源清單 ↗</a>。</p>
+        <p className="image-credits">本頁圖片來源與素材說明收錄於 <a href={siteUrl("/images/IMAGE_SOURCES.json")} target="_blank" rel="noopener noreferrer">圖片來源清單 ↗</a>。</p>
       </section>
     </SiteShell>
   );

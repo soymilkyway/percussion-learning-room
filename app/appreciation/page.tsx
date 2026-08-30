@@ -160,7 +160,7 @@ export default function Appreciation() {
                     </h3>
                     <p className="music-credit">{song.credit}</p>
                     <p>{song.description}</p>
-                    <a className="source-link" href={song.sourceUrl} target="_blank" rel="noreferrer">資料來源：{song.sourceLabel} <span aria-hidden="true">↗</span></a>
+                    <a className="source-link" href={song.sourceUrl} target="_blank" rel="noopener noreferrer">資料來源：{song.sourceLabel} <span aria-hidden="true">↗</span></a>
                   </div>
                 </article>
               ))}

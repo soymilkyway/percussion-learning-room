@@ -240,8 +240,9 @@ main { min-height: 70vh; }
 #woodwinds .band-instrument-piccolo { transform: rotate(-60deg) scale(1.395); }
 #woodwinds .band-instrument-flute { transform: rotate(-60deg) scale(1.705); }
 #woodwinds .band-instrument-saxophone { transform: rotate(0deg) scale(1.08); }
-#woodwinds .band-instrument-double-bass { transform: rotate(-60deg) scale(1.59); }
-#brass .band-instrument-trombone { transform: rotate(-45deg) scale(1.3); }
+#woodwinds .band-instrument-double-bass { transform: rotate(0deg) scale(1.08); }
+#brass .band-instrument-trumpet { transform: rotate(-30deg); }
+#brass .band-instrument-trombone { transform: rotate(-30deg) scale(1.3); }
 #brass .band-instrument-euphonium { transform: rotate(-120deg) scaleY(-1) scale(1.215); }
 #brass .band-instrument-tuba { clip-path: inset(3%); transform: rotate(60deg) scale(1.22); }
 .band-instrument-grid li > div { display: flex; flex-direction: column; padding: .55rem .3rem .2rem; }
@@ -284,8 +285,11 @@ footer { max-width: var(--max); margin: auto; padding: 1.4rem 2rem; display: gri
 .footer-brand { display: flex; gap: .55rem; color: var(--ink); }
 footer p { margin: 0; }
 .footer-meta { display: grid; gap: .3rem; }
-.footer-contact a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 3px; }
+.footer-contact { display: flex; align-items: center; flex-wrap: wrap; gap: .15rem .28rem; }
+.footer-contact a { width: fit-content; display: inline-flex; align-items: center; gap: .28rem; color: var(--ink-soft); line-height: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .footer-contact a:hover { color: var(--accent-dark); }
+.instagram-icon { width: 1rem; height: 1rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.instagram-icon-dot { fill: currentColor; stroke: none; }
 footer > a { text-decoration: underline; text-underline-offset: 4px; }
 
 @media (max-width: 980px) {
@@ -345,8 +349,9 @@ footer > a { text-decoration: underline; text-underline-offset: 4px; }
   #woodwinds .band-instrument-piccolo { transform: rotate(-60deg) scale(1.278); }
   #woodwinds .band-instrument-flute { transform: rotate(-60deg) scale(1.562); }
   #woodwinds .band-instrument-saxophone { transform: rotate(0deg) scale(1.02); }
-  #woodwinds .band-instrument-double-bass { transform: rotate(-60deg) scale(1.48); }
-  #brass .band-instrument-trombone { transform: rotate(-45deg) scale(1.3); }
+  #woodwinds .band-instrument-double-bass { transform: rotate(0deg) scale(1.02); }
+  #brass .band-instrument-trumpet { transform: rotate(-30deg); }
+  #brass .band-instrument-trombone { transform: rotate(-30deg) scale(1.3); }
   #brass .band-instrument-euphonium { transform: rotate(-120deg) scaleY(-1) scale(1.125); }
   #brass .band-instrument-tuba { transform: rotate(60deg) scale(1.16); }
   .additional-band-instruments ul { grid-template-columns: 1fr; }
