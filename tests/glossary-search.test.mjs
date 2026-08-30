@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { percussionGlossary } from "../app/data/glossary.mjs";
-import { matchesGlossarySearch } from "../app/lib/glossary-search.mjs";
+import { isGlossaryEasterEggQuery, matchesGlossarySearch } from "../app/lib/glossary-search.mjs";
 
 const entries = percussionGlossary.flatMap((group) =>
   group.rows.map(([name, english, abbreviation, anchor]) => ({
@@ -51,4 +51,13 @@ test("常見部分字與縮寫查詢仍可正確匹配", () => {
   assert.ok(search("s d").includes("小鼓"));
   assert.ok(search("timp").includes("定音鼓"));
   assert.ok(search("glock").includes("鐘琴"));
+});
+
+test("彩蛋只由完整的 R 或彩蛋關鍵字觸發", () => {
+  assert.equal(isGlossaryEasterEggQuery("R"), true);
+  assert.equal(isGlossaryEasterEggQuery(" r "), true);
+  assert.equal(isGlossaryEasterEggQuery("彩蛋"), true);
+  assert.equal(isGlossaryEasterEggQuery("rick"), false);
+  assert.equal(isGlossaryEasterEggQuery("樂器彩蛋"), false);
+  assert.equal(isGlossaryEasterEggQuery(""), false);
 });

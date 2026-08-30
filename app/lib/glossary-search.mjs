@@ -9,3 +9,8 @@ export function matchesGlossarySearch(entry, query) {
     .map(normalizeGlossarySearchText)
     .some((value) => value.includes(normalizedQuery));
 }
+
+export function isGlossaryEasterEggQuery(query) {
+  const normalizedQuery = normalizeGlossarySearchText(query);
+  return normalizedQuery === "r" || normalizedQuery === "彩蛋";
+}
