@@ -32,7 +32,8 @@ for (const route of routes) {
     assert.match(html, /打擊樂器學習室/);
     assert.match(html, /<h1[\s>]/);
     assert.doesNotMatch(html, /Building your site|codex-preview/);
-    assert.ok(html.includes(`${origin}${base}/og-v3.png`), "Absolute social preview URL");
+    assert.ok(html.includes(`${origin}${base}/og-v4.png`), "Absolute social preview URL");
+    assert.match(html, /從樂器認識、演奏基本功到音樂賞析，給剛加入打擊的你/);
     for (const match of html.matchAll(/\b(?:src|href)="([^"<>]+)"/g)) {
       assertLocalTarget(match[1].replaceAll("&amp;", "&"), `${route}/`);
     }
