@@ -35,6 +35,7 @@ test("首頁呈現網站名稱、主要導覽與學習路線", async () => {
   assert.match(html, /經典原創曲、行進曲，到電影、遊戲與流行音樂改編/);
   assert.doesNotMatch(html, /挑選你想深入了解的單元|lesson-grid|lesson-card/);
   assert.match(html, /樂器中英文對照表/);
+  assert.match(html, /樂譜上的寫法可能因出版社或作曲家而不同。點擊樂器名可以查看該樂器。/);
   assert.match(html, /id="glossary"/);
   assert.match(html, /placeholder="例如：小鼓、snare、SD、timp"/);
   assert.match(html, /href="\/#glossary"/);

@@ -63,7 +63,7 @@ export default function Home() {
             <p className="eyebrow">PERCUSSION GLOSSARY</p>
             <h2 id="percussion-terms-title">樂器中英文對照表</h2>
           </div>
-          <p>樂譜上的寫法可能因出版社或作曲家而不同</p>
+          <p>樂譜上的寫法可能因出版社或作曲家而不同。點擊樂器名可以查看該樂器。</p>
         </div>
         <GlossarySearch entries={glossaryEntries} />
         <div className="glossary-grid">
