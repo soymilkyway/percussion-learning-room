@@ -6,12 +6,13 @@ import { pageUrl } from "./lib/site-url";
 
 export default function Home() {
   const glossaryEntries = percussionGlossary.flatMap((group) =>
-    group.rows.map(([name, english, abbreviation, anchor]) => ({
+    group.rows.map(([name, english, abbreviation, anchor, externalUrl]) => ({
       group: group.title,
       name,
       english,
       abbreviation,
-      href: anchor ? pageUrl(`/instruments#${anchor}`) : undefined,
+      href: externalUrl || (anchor ? pageUrl(`/instruments#${anchor}`) : undefined),
+      external: Boolean(externalUrl),
     })),
   );
 
@@ -74,18 +75,26 @@ export default function Home() {
                 <colgroup><col /><col className="glossary-abbreviation-column" /></colgroup>
                 <thead><tr><th scope="col">樂器名稱<span className="glossary-heading-hint">中／英文</span></th><th scope="col">縮寫</th></tr></thead>
                 <tbody>
-                  {group.rows.map(([name, english, abbreviation, anchor]) => (
-                    <tr key={name}>
-                      <th scope="row">
-                        {anchor ? (
-                          <a className="glossary-instrument-link" href={pageUrl(`/instruments#${anchor}`)} target="_top"><span className="glossary-name">{name}</span><span className="glossary-english" lang="en">{english}</span></a>
-                        ) : (
-                          <span className="glossary-instrument-name"><span className="glossary-name">{name}</span><span className="glossary-english" lang="en">{english}</span></span>
-                        )}
-                      </th>
-                      <td>{abbreviation ? <span className="glossary-abbreviation">{abbreviation}</span> : <span className="glossary-unavailable" aria-label="未提供縮寫">—</span>}</td>
-                    </tr>
-                  ))}
+                  {group.rows.map(([name, english, abbreviation, anchor, externalUrl]) => {
+                    const href = externalUrl || (anchor ? pageUrl(`/instruments#${anchor}`) : undefined);
+                    return (
+                      <tr key={name}>
+                        <th scope="row">
+                          {href ? (
+                            <a
+                              className="glossary-instrument-link"
+                              href={href}
+                              target={externalUrl ? "_blank" : "_top"}
+                              rel={externalUrl ? "noopener noreferrer" : undefined}
+                            ><span className="glossary-name">{name}</span><span className="glossary-english" lang="en">{english}</span></a>
+                          ) : (
+                            <span className="glossary-instrument-name"><span className="glossary-name">{name}</span><span className="glossary-english" lang="en">{english}</span></span>
+                          )}
+                        </th>
+                        <td>{abbreviation ? <span className="glossary-abbreviation">{abbreviation}</span> : <span className="glossary-unavailable" aria-label="未提供縮寫">—</span>}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </details>

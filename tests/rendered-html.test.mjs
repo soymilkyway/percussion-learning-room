@@ -50,11 +50,11 @@ const routes = [
   ["/band-knowledge", "扇形樂團配置"],
 ];
 
-test("首頁對照表以四個分類呈現完整33種樂器，中英文同列並保留縮寫與有效連結", async () => {
+test("首頁對照表以四個分類呈現完整42種樂器，中英文同列並保留縮寫與有效連結", async () => {
   const html = await (await render()).text();
   assert.equal((html.match(/class="percussion-terms-table"/g) ?? []).length, 4);
-  assert.equal((html.match(/class="glossary-name"/g) ?? []).length, 33);
-  assert.equal((html.match(/class="glossary-english"/g) ?? []).length, 33);
+  assert.equal((html.match(/class="glossary-name"/g) ?? []).length, 42);
+  assert.equal((html.match(/class="glossary-english"/g) ?? []).length, 42);
   assert.equal((html.match(/<details class="glossary-group"/g) ?? []).length, 4);
   assert.match(html, /手鈸 \/ 雙鈸/);
   assert.match(html, /鐵琴 \/ 顫音琴/);
@@ -74,12 +74,27 @@ test("首頁對照表以四個分類呈現完整33種樂器，中英文同列並
   assert.match(html, /雪鈴/);
   assert.match(html, /S\. Bells/);
   assert.match(html, /<span class="glossary-name">雪鈴<\/span>[\s\S]*<span class="glossary-name">響棒<\/span>/);
-  assert.match(html, /<span class="glossary-name">阿哥哥鈴<\/span>[\s\S]*<span class="glossary-name">手指鈸<\/span>/);
+  assert.match(html, /<summary>鼓類[\s\S]*爵士鼓\/鼓組[\s\S]*愛爾蘭手鼓[\s\S]*非洲鼓[\s\S]*締太鼓[\s\S]*和太鼓[\s\S]*<summary>鈸與鑼類/);
+  assert.match(html, /<summary>鈸與鑼類[\s\S]*<span class="glossary-name">鉦<\/span>[\s\S]*<span class="glossary-name">手指鈸<\/span>[\s\S]*<summary>琴類/);
+  assert.match(html, /<summary>小樂器[\s\S]*阿哥哥鈴[\s\S]*海浪鼓[\s\S]*雨柱 \/ 雨聲器[\s\S]*船鐘[\s\S]*神楽鈴/);
   assert.match(html, /天巴鼓/);
   assert.match(html, /Timbales/);
   assert.match(html, /饒鈸/);
   assert.match(html, /Crotales/);
   assert.match(html, /管鐘[\s\S]*Chimes \/ Tubular Bells/);
+  for (const url of [
+    "https://www.youtube.com/shorts/3UBZo1_Ys94",
+    "https://www.youtube.com/shorts/XlMeOkbiFmU",
+    "https://www.youtube.com/watch?v=ZMrhMEp3i8M",
+    "https://www.youtube.com/watch?v=-EZ6WbisTD0",
+    "https://www.youtube.com/shorts/pRMStd4mw0U",
+    "https://www.youtube.com/shorts/cRkr6-amhzI",
+    "https://www.youtube.com/shorts/fpPA9yTbvSs",
+    "https://www.youtube.com/shorts/TZZuBJTTMPk",
+    "https://www.youtube.com/shorts/Zd3CQk_2mfo",
+  ]) {
+    assert.ok(html.includes(`href="${url}" target="_blank" rel="noopener noreferrer"`), `缺少安全的 YouTube 連結：${url}`);
+  }
   assert.doesNotMatch(html, /href="\/instruments#bell-tree"/);
   assert.match(html, /class="glossary-instrument-name"><span class="glossary-name">樹鈴/);
   assert.match(html, /class="glossary-unavailable" aria-label="未提供縮寫">—/);

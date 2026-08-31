@@ -1,5 +1,5 @@
-// Each row is [Chinese name, English name, abbreviation, instrument anchor].
-// Leave unavailable abbreviations or anchors empty.
+// Each row is [Chinese name, English name, abbreviation, instrument anchor, external demo URL].
+// Leave unavailable abbreviations, anchors, or demo URLs empty.
 export const percussionGlossary = [
   { id: "drums", title: "鼓類", rows: [
     ["小鼓", "Snare Drum", "S.D.", "snare-drum"],
@@ -10,11 +10,17 @@ export const percussionGlossary = [
     ["定音鼓", "Timpani", "Timp.", "timpani"],
     ["天巴鼓", "Timbales", "", "timbales"],
     ["爵士鼓/鼓組", "Drumset / Drums", "", ""],
+    ["愛爾蘭手鼓", "Bodhran", "", "", "https://www.youtube.com/shorts/pRMStd4mw0U"],
+    ["非洲鼓", "Djembe", "", "", "https://www.youtube.com/shorts/cRkr6-amhzI"],
+    ["締太鼓", "Shime-daiko (締め太鼓)", "", "", "https://www.youtube.com/shorts/fpPA9yTbvSs"],
+    ["和太鼓", "Wadaiko (和太鼓)", "", "", "https://www.youtube.com/shorts/TZZuBJTTMPk"],
   ] },
   { id: "cymbals", title: "鈸與鑼類", rows: [
     ["手鈸 / 雙鈸", "Crash Cymbals", "Cr. Cyms.", "crash-cymbals"],
     ["吊鈸", "Suspended Cymbal", "Sus. Cym.", "suspended-cymbal"],
     ["鑼", "Tam-tam / Gong", "", "tam-tam"],
+    ["鉦", "Atari-Gane (当たり鉦)", "", "", "https://www.youtube.com/shorts/Zd3CQk_2mfo"],
+    ["手指鈸", "Finger Cymbals", "Finger Cyms", "finger-cymbals"],
   ] },
   { id: "mallets", title: "琴類", rows: [
     ["高音木琴", "Xylophone", "Xylo.", "xylophone"],
@@ -40,6 +46,9 @@ export const percussionGlossary = [
     ["拍板", "Whip", "", "slapstick"],
     ["震盪器", "Vibra-slap", "V-slap", "vibraslap"],
     ["阿哥哥鈴", "Agogo Bells", "Agogo", "agogo-bells"],
-    ["手指鈸", "Finger Cymbals", "Finger Cyms", "finger-cymbals"],
+    ["海浪鼓", "Ocean Drum", "", "", "https://www.youtube.com/shorts/3UBZo1_Ys94"],
+    ["雨柱 / 雨聲器", "Rain Stick", "", "", "https://www.youtube.com/shorts/XlMeOkbiFmU"],
+    ["船鐘", "Ship's Bell", "", "", "https://www.youtube.com/watch?v=ZMrhMEp3i8M"],
+    ["神楽鈴", "Kagura-Suzu", "", "", "https://www.youtube.com/watch?v=-EZ6WbisTD0"],
   ] },
 ];

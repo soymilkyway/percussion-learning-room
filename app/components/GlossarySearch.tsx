@@ -9,6 +9,7 @@ export type GlossarySearchEntry = {
   english: string;
   abbreviation: string;
   href?: string;
+  external?: boolean;
 };
 
 export function GlossarySearch({ entries }: { entries: GlossarySearchEntry[] }) {
@@ -45,7 +46,12 @@ export function GlossarySearch({ entries }: { entries: GlossarySearchEntry[] }) 
                 <li key={`${entry.group}-${entry.name}`}>
                   <span className="glossary-result-group">{entry.group}</span>
                   {entry.href ? (
-                    <a className="glossary-result-link" href={entry.href} target="_top"><strong>{entry.name}</strong><small lang="en">{entry.english}</small></a>
+                    <a
+                      className="glossary-result-link"
+                      href={entry.href}
+                      target={entry.external ? "_blank" : "_top"}
+                      rel={entry.external ? "noopener noreferrer" : undefined}
+                    ><strong>{entry.name}</strong><small lang="en">{entry.english}</small></a>
                   ) : (
                     <span className="glossary-result-name"><strong>{entry.name}</strong><small lang="en">{entry.english}</small></span>
                   )}
