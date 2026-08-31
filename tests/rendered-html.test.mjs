@@ -24,12 +24,16 @@ test("首頁呈現網站名稱、主要導覽與學習路線", async () => {
   assert.match(html, /⨳這個頁面下方有樂器中英文對照，方便你記得樂器名!/);
   assert.doesNotMatch(html, /基礎樂理/);
   assert.match(html, /演奏基本功/);
-  assert.match(html, /怎麼握鼓棒？姿勢長什麼樣？/);
+  assert.match(html, /了解怎麼握鼓棒、姿勢長什麼樣，建立穩定的動作/);
   assert.match(html, /樂器介紹/);
   assert.match(html, /音樂賞析/);
   assert.match(html, /管樂團知識/);
   assert.match(html, /第一次來的學習順序/);
   assert.match(html, /管樂團知識[\s\S]*樂器介紹[\s\S]*演奏基本功[\s\S]*音樂賞析/);
+  assert.match(html, /可點選的樂團配置圖/);
+  assert.match(html, /鼓與鈸類、琴類、小型與特殊打擊樂器/);
+  assert.match(html, /經典原創曲、行進曲，到電影、遊戲與流行音樂改編/);
+  assert.doesNotMatch(html, /挑選你想深入了解的單元|lesson-grid|lesson-card/);
   assert.match(html, /樂器中英文對照表/);
   assert.match(html, /id="glossary"/);
   assert.match(html, /placeholder="例如：小鼓、snare、SD、timp"/);

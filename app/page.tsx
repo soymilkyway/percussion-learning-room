@@ -1,7 +1,7 @@
 import { SiteShell } from "./components/SiteShell";
 import { GlossarySearch } from "./components/GlossarySearch";
 import { percussionGlossary } from "./data/glossary.mjs";
-import { beginnerPath, homeLessons } from "./data/site";
+import { beginnerPath } from "./data/site";
 import { pageUrl } from "./lib/site-url";
 
 export default function Home() {
@@ -54,20 +54,6 @@ export default function Home() {
             </li>
           ))}
         </ol>
-      </section>
-
-      <section className="home-section" aria-labelledby="course-map">
-        <div className="section-heading">
-          <div><h2 id="course-map">挑選你想深入了解的單元</h2></div>
-        </div>
-        <div className="lesson-grid">
-          {homeLessons.map((lesson) => (
-            <a href={pageUrl(lesson.href)} target="_top" className="lesson-card" key={lesson.href}>
-              <h3>{lesson.title}</h3><p className="english">{lesson.en}</p>
-              <p>{lesson.text}</p><span className="card-arrow" aria-hidden="true">↗</span>
-            </a>
-          ))}
-        </div>
       </section>
 
       <section className="home-section percussion-terms-section" id="glossary" aria-labelledby="percussion-terms-title">
